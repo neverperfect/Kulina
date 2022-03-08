@@ -3,7 +3,6 @@ let input = null;
 
 // Prompt for user input
 input = prompt(`Please input the number for which program to run: \n (1) for Kulina x Food \n (2) for Find the Dissimilirarity \n (3) for Roman to Integer \n \n Input: `);
-console.log(input)
 
 switch (input) {
     case '1':
@@ -41,21 +40,32 @@ function kulinaXFood() {
             arr.push(i.toString());
         }
     }
-    console.log(arr);
+    return console.log(arr);
 }
 
 function findTheDissimilarity() {
     console.log('Running Find the Dissimilarity..')
 
+    let err = null;
+
     // Prompt for user input
     str1 = prompt(`Input first string: `);
     str2 = prompt(`Input second string: `);
 
+    // Length validation
+    if (str1.length > str2.length) { 
+        return console.log('Invalid inputs, first string cannot be longer than second string');
+    }
+
     // Find all the same characters between both, replace it to ""
     for (var i = 0; i < str1.length; i++) {
+        // Character content validation
+        if (str2.indexOf(str1[i]) === -1) {
+            return console.log('Invalid inputs, second string must have shuffled characters from first string');
+        }
         str2 = str2.replace(str1[i], "");
     }
-    console.log(`Output:`, str2); 
+    return console.log(`Output:`, str2); 
 }
 
 function romanToInteger() {
@@ -80,5 +90,5 @@ function romanToInteger() {
             console.log(result)
         });
     }
-    console.log(result);
+    return console.log(result);
 }
