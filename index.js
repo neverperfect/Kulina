@@ -46,8 +46,6 @@ function kulinaXFood() {
 function findTheDissimilarity() {
     console.log('Running Find the Dissimilarity..')
 
-    let err = null;
-
     // Prompt for user input
     str1 = prompt(`Input first string: `);
     str2 = prompt(`Input second string: `);
