@@ -84,8 +84,7 @@ function romanToInteger() {
     if(input) {
         var splitStr = input.split('');
         splitStr.forEach(function(e, i) {
-            result += myMap.get(e) < myMap.get(splitStr[i+1]) ? -myMap.get(e) : myMap.get(e); 
-            console.log(result)
+            result += myMap.get(e) < myMap.get(splitStr[i+1]) ? -myMap.get(e) : myMap.get(e);
         });
     }
     return console.log(result);
